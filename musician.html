@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Musician</title>
+    <h1>Musician guess by Prashanth Reddy Dandyala</h1>
+ </head>
+<body>
+    
+    
+<h2>Getting input</h2>
+
+
+<form>
+    <label for="form1_age">Enter the secret 
+        musician name</label>
+    <input type ="password" id="form1_sec_mus" name="form1_age" value="John Lennon"> <br>
+
+    <label for="form1_nick">Guess the musician</label>
+    <input type ="text" id="form1_guess_mus" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+correct=0
+wrong=0
+
+function checkGuess(){
+    console.log("Getting form values")
+    sec_mus = document.getElementById("form1_sec_mus").value
+    guess_mus = document.getElementById("form1_guess_mus").value
+    out = document.getElementById("result")
+    if(sec_mus===guess_mus)
+    {
+        correct=correct+1
+        alert("You got it right")
+        out.innerHTML = "No of Correct attempts "+correct
+    }
+    else{
+        wrong=wrong+1
+        alert("Wrong Musician")
+        out.innerHTML = "No of Wrong attempts "+wrong
+    }
+    
+    
+    if(confirmed){
+       
+    } else {
+        out.innerHTML = "Values were not confirmed"
+   }
+}
+</script>
+
+</body>
+</html> 
