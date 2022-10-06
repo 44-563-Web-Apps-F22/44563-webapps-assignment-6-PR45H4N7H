@@ -5,7 +5,9 @@
     <h1>Musician guess by Prashanth Reddy Dandyala</h1>
  </head>
 <body>
-    
+    <div class="Images">
+        <div><img src="dragon.jpg" alt="dragonImage" height=100px width=100px onclick="swapImage()" id="Image"></div>
+    </div>
     
 <h2>Getting input</h2>
 
@@ -27,7 +29,28 @@
 <script> 
 correct=0
 wrong=0
+useImage=1
+function swapImage()
+{
+    
+    switch(useImage)
+    {
+        case 1:
+        document.getElementById("Image").src="Antt.jpg"
+        useImage=useImage+1
+        break
+        case 2:
+        document.getElementById("Image").src="Neu.jpg"
+        useImage=useImage+1
+        break
+        case 3:
+        document.getElementById("Image").src="dragon.jpg"
+        useImage=useImage+1
 
+
+    }
+    
+}
 function checkGuess(){
     console.log("Getting form values")
     sec_mus = document.getElementById("form1_sec_mus").value
