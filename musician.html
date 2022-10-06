@@ -67,6 +67,10 @@ function checkGuess(){
         wrong=wrong+1
         alert("Wrong Musician")
         out.innerHTML = "No of Wrong attempts "+wrong
+        if(wrong==3)
+        {
+            alert("Sorry, game over.")
+        }
     }
     
     
