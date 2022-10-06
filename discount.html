@@ -30,6 +30,22 @@
         <p id="result">This text will be replaced </p>
         </div>
     </div>
+    <div class="container">
+        <form>
+            <div class="form-group">
+            <input type="radio" id="firstRadio" name="operation" onclick="chooseOp()" value="times">
+            <label for="firstRadio">*</label> <br>
+            </div>
+            <div class="form-group">
+            <input type="radio" id="secondRadio" name="operation" onclick="chooseOp()" value="divide">
+            <label for="secondRadio">/</label> <br>
+            </div>
+        
+            <input type="radio" id="thirdRadio" name="operation" onclick="chooseOp()" value="exponent">
+            <label for="thirdRadio">**</label> <br>
+        </form>
+        <p id="resultRadio">This text will be replaced </p>
+    </div>
     <script>
         function discount()
         {   
@@ -43,6 +59,29 @@
                
             }
             document.getElementById("result").innerHTML="Discounted amounts for base "+baseAmount+" are "+result;
+        
+        }
+        function chooseOp()
+        {
+           let baseVal=document.getElementById("baseAmount").value;
+           let discountVal=document.getElementById("discountAmount").value;
+           let times=document.getElementById("firstRadio").checked;
+           let divide=document.getElementById("secondRadio").checked;
+           let exponent=document.getElementById("thirdRadio").checked;
+           let results=0;
+           if(times)
+           {
+            results=baseVal*discountVal;
+           }
+           else if(divide)
+           {
+            results=baseVal/discountVal;
+           }
+           else if(exponent)
+           {
+            results=baseVal**discountVal
+           }
+           document.getElementById("resultRadio").innerHTML=results
         
         }
     </script>
